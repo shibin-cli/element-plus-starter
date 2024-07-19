@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('./reset.scss');
+.primary {
+  color: var(--#{$namespace}-color-primary);
+}
+body {
+  background-color: $bg-color;
+}

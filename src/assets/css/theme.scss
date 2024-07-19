@@ -1,0 +1,15 @@
+// @import url('./var.scss');
+// $namespace: 'you';
+
+@use 'element-plus/theme-chalk/src/mixins/config.scss' with (
+  $namespace: $namespace
+);
+@use 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $primary
+    )
+  )
+);
+
+@use 'element-plus/theme-chalk/src/index.scss' as *;
