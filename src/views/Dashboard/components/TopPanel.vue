@@ -137,8 +137,8 @@ onMounted(() => {
             class="absolute right-0 bottom-0 w-[120px] h-[56px]"
           ></div>
         </div>
-        <div class="text-sm opacity-60 flex">
-          <div>{{ $t('pages.dashboardBase.topPanel.cardTips') }}</div>
+        <div class="text-sm flex">
+          <div class="opacity-60">{{ $t('pages.dashboardBase.topPanel.cardTips') }}</div>
 
           <Trend v-if="item.upTrend" type="upTrend" :count="item.upTrend" class="flex-1" />
           <Trend v-else type="downTrend" :count="item.downTrend" class="flex-1" />
@@ -156,12 +156,12 @@ onMounted(() => {
   &.active {
     background-color: $primary;
     color: #fff;
-    .success,
-    .error {
+    :deep(.success),
+    :deep(.error) {
       color: #fff;
-      background: transparent;
+      // background: #fff;
       .trend-icon-wrap {
-        background: transparent;
+        background: #618dff;
       }
     }
   }

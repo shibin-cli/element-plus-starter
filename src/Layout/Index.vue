@@ -15,11 +15,17 @@ const store = useThemeStore()
       <side-bar />
     </el-aside>
     <el-container>
-      <el-header class="bg-white">
+      <el-header class="bg-white border-bottom">
         <layout-header />
       </el-header>
       <el-scrollbar>
-        <el-main> <router-view /> </el-main>
+        <el-main>
+          <router-view v-slot="{ Component }">
+            <transition name="fade">
+              <component :is="Component" />
+            </transition>
+          </router-view>
+        </el-main>
       </el-scrollbar>
     </el-container>
   </el-container>
@@ -27,5 +33,6 @@ const store = useThemeStore()
 <style scoped lang="scss">
 :deep(.#{$namespace}-header) {
   height: $header-height;
+  border-bottom: 1px solid $border-color;
 }
 </style>

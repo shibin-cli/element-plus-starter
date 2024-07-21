@@ -5,6 +5,9 @@ import LogoIcon from '@/assets/icons/assets-t-logo.svg?component'
 import { DataBoard, List } from '@element-plus/icons-vue'
 import { type DefineComponent } from 'vue'
 import useThemeStore from '@/stores/theme'
+import {useRoute} from 'vue-router'
+
+const route = useRoute()
 interface MenuItem {
   path: string
   title: string
@@ -62,7 +65,8 @@ const menu: Menu = [
       <logo-full-icon class="w-full px-6 cursor-pointer h-[28px]" v-else />
     </div>
     <div class="flex-1 flex flex-col">
-      <el-menu class="flex-1" router :collapse="store.collapse" :collapse-transition="false">
+      <el-menu class="flex-1" router :collapse="store.collapse" :collapse-transition="false"       :default-active="route.path"
+      >
         <template v-for="item in menu" :key="item.path">
           <template v-if="item.children">
             <el-sub-menu :title="item.title" :index="item.path">

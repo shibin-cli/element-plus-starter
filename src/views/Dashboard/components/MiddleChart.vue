@@ -19,13 +19,17 @@ function getRandomArray(num = 100): number {
 onMounted(() => {
   renderChart()
 })
+let monitorContainer: HTMLDivElement
+let monitorChart: echarts.ECharts
+let countContainer: HTMLDivElement
+let countChart: echarts.ECharts
 function renderChart() {
-  const monitorContainer = document.getElementById('monitorContainer')
-  const monitorChart = echarts.init(monitorContainer)
+  monitorContainer = document.getElementById('monitorContainer') as HTMLDivElement
+  monitorChart = echarts.init(monitorContainer)
   monitorChart.setOption(getLineChartDataSet({}))
 
-  const countContainer = document.getElementById('countContainer')
-  const countChart = echarts.init(countContainer)
+  countContainer = document.getElementById('countContainer') as HTMLDivElement
+  countChart = echarts.init(countContainer)
   countChart.setOption(getPieChartDataSet({}))
 }
 function getPieChartDataSet({
@@ -228,15 +232,15 @@ function getLineChartDataSet({
   }
   return dataSet
 }
-window.onresize = () => {
-  const monitorContainer = document.getElementById('monitorContainer')
-  const monitorChart = echarts.init(monitorContainer)
-  monitorChart.resize()
 
-  const countContainer = document.getElementById('countContainer')
-  const countChart = echarts.init(countContainer)
-  countChart.resize()
-}
+window.addEventListener('resize', () => {
+  monitorChart.resize({
+    width: monitorContainer.clientWidth
+  })
+  countChart.resize({
+    width: countContainer.clientWidth
+  })
+})
 </script>
 <template>
   <el-row :gutter="16">

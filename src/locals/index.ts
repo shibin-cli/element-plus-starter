@@ -59,5 +59,7 @@ export const langList = computed(() => {
 
   return list
 })
+// @ts-ignore
+export const { t } = i18n.global as { t: (k: string) => string }
 
 export default i18n

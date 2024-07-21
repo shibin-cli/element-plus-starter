@@ -8,3 +8,14 @@
 body {
   background-color: $bg-color;
 }
+
+
+.fade-leave-active,
+.fade-enter-active {
+  transition: opacity $anim-duration-slow $anim-time-fn-easing;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

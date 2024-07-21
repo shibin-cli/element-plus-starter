@@ -80,7 +80,7 @@ const BUY_TEND_LIST: Array<TendItem> = [
 ]
 </script>
 <template>
-  <div class="bg-white rounded-md p-8">
+  <div class="bg-white rounded-md p-8 mb-4">
     <div class="flex items-center">
       <div class="flex-1">
         <div class="text-xl">
