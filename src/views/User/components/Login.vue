@@ -2,6 +2,8 @@
 import { ref } from 'vue'
 import { User, Lock, Refresh } from '@element-plus/icons-vue'
 import QrcodeVue from 'qrcode.vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const countDown = ref(0)
 
 const type = ref('password')
@@ -88,7 +90,9 @@ const formData = ref({
     </template>
   </el-form>
   <el-form-item class="mt-10" v-if="type !== 'qrcode'">
-    <el-button type="primary" size="large" class="w-full">{{ $t('pages.login.signIn') }}</el-button>
+    <el-button type="primary" size="large" class="w-full" @click="router.push('/')">{{
+      $t('pages.login.signIn')
+    }}</el-button>
   </el-form-item>
   <div class="mt-6 primary text-sm">
     <span class="cursor-pointer mr-4" v-if="type !== 'password'" @click="switchType('password')">{{

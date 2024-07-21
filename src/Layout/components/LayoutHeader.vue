@@ -2,8 +2,10 @@
 import LogoFullIcon from '@/assets/icons/assets-logo-full.svg?component'
 import { Expand, Fold, ArrowDown } from '@element-plus/icons-vue'
 import useThemeStore from '@/stores/theme'
+import { useRouter } from 'vue-router'
 
 const store = useThemeStore()
+const router = useRouter()
 </script>
 <template>
   <div class="flex items-center h-full justify-between">
@@ -63,8 +65,12 @@ const store = useThemeStore()
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>{{ $t('layout.header.user') }}</el-dropdown-item>
-            <el-dropdown-item>{{ $t('layout.header.signOut') }}</el-dropdown-item>
+            <el-dropdown-item @click="router.push('/profile')">{{
+              $t('layout.header.user')
+            }}</el-dropdown-item>
+            <el-dropdown-item @click="router.push('/auth')">{{
+              $t('layout.header.signOut')
+            }}</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>

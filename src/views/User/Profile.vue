@@ -13,37 +13,34 @@ const value1 = ref('')
 const PRODUCT_LIST = ['a', 'b', 'c', 'd']
 
 const { t } = useI18n()
-let lineContainer: HTMLDivElement
+const lineRef = ref<HTMLElement>()
 let lineChart: echarts.ECharts
 const renderLineChart = () => {
-  lineContainer = document.getElementById('lineContainer') as HTMLDivElement
-  if (!lineContainer) return
-  if (!lineChart) lineChart = echarts.init(lineContainer)
-
+  if (!lineRef.value) return
+  lineChart = echarts.init(lineRef.value)
   lineChart.setOption(getFolderLineDataSet({}))
 }
 watch(activeName, () => {
   nextTick(() => {
-    if (!lineChart) {
-      renderLineChart()
-    } else {
-      lineChart.resize({
-        width: lineContainer.clientWidth
-      })
-    }
+    lineChart.resize({
+      width: lineRef.value?.clientWidth
+    })
   })
 })
 onMounted(() => {
   renderLineChart()
-  window.addEventListener('resize', () => {
+})
+window.addEventListener('resize', () => {
+  if (!lineChart) return
+  if (lineRef.value) {
     lineChart.resize({
-      width: lineContainer.clientWidth
+      width: lineRef.value?.clientWidth
     })
-  })
+  }
 })
 onActivated(() => {
   lineChart.resize({
-    width: lineContainer.clientWidth
+    width: lineRef.value?.clientWidth
   })
 })
 function getFolderLineDataSet({
@@ -260,7 +257,7 @@ function getFolderLineDataSet({
                 />
               </template>
               <template #content>
-                <div id="lineContainer" class="mt-6" style="width: 100%; height: 328px" />
+                <div ref="lineRef" class="mt-6" style="width: 100%; height: 328px" />
               </template>
             </card>
           </el-tab-pane>

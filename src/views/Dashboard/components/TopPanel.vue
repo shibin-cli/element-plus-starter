@@ -141,7 +141,12 @@ onMounted(() => {
           <div class="opacity-60">{{ $t('pages.dashboardBase.topPanel.cardTips') }}</div>
 
           <Trend v-if="item.upTrend" type="upTrend" :count="item.upTrend" class="flex-1" />
-          <Trend v-else type="downTrend" :count="item.downTrend" class="flex-1" />
+          <Trend
+            v-else-if="item.downTrend"
+            type="downTrend"
+            :count="item.downTrend"
+            class="flex-1"
+          />
 
           <el-icon class="cursor-pointer">
             <ArrowRightBold />
