@@ -5,9 +5,9 @@ defineProps<{
 </script>
 <template>
   <div class="bg-white rounded-md p-8">
-    <div class="flex items-center">
+    <div class="flex items-center flex-wrap">
       <div class="flex-1">
-        <div class="text-xl">{{ title }}</div>
+        <div class="text-xl text-nowrap">{{ title }}</div>
       </div>
       <div>
         <slot name="action" />

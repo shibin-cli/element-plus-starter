@@ -5,7 +5,7 @@ import LogoIcon from '@/assets/icons/assets-t-logo.svg?component'
 import { DataBoard, List } from '@element-plus/icons-vue'
 import { type DefineComponent } from 'vue'
 import useThemeStore from '@/stores/theme'
-import {useRoute} from 'vue-router'
+import { useRoute } from 'vue-router'
 
 const route = useRoute()
 interface MenuItem {
@@ -51,6 +51,12 @@ const menu: Menu = [
     ]
   },
   {
+    path: '/profile',
+    title: '个人中心',
+    isSvgIcon: true,
+    icon: 'user-circle'
+  },
+  {
     path: '/auth',
     title: '登录页',
     isSvgIcon: true,
@@ -65,7 +71,12 @@ const menu: Menu = [
       <logo-full-icon class="w-full px-6 cursor-pointer h-[28px]" v-else />
     </div>
     <div class="flex-1 flex flex-col">
-      <el-menu class="flex-1" router :collapse="store.collapse" :collapse-transition="false"       :default-active="route.path"
+      <el-menu
+        class="flex-1"
+        router
+        :collapse="store.collapse"
+        :collapse-transition="false"
+        :default-active="route.path"
       >
         <template v-for="item in menu" :key="item.path">
           <template v-if="item.children">

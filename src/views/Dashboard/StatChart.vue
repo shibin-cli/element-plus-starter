@@ -311,90 +311,92 @@ function getScatterDataSet({
 }
 </script>
 <template>
-  <div class="bg-white rounded-md p-8">
-    <div class="flex items-center">
-      <div class="flex-1">
-        <div class="text-xl">{{ $t('pages.dashboardDetail.topPanel.title') }}</div>
-        <el-row :gutter="16" class="mt-6">
-          <el-col
-            v-for="item in PANE_LIST_DATA"
-            :key="item.title"
-            :sm="12"
-            :md="12"
-            :lg="6"
-            class="mb-4"
-          >
-            <div class="p-6 card rounded-md">
-              <div class="text-sm opacity-60 mb-3">
-                {{ item.title }}
-              </div>
-              <div class="text-3xl">{{ item.number }}</div>
-              <div class="flex items-center text-sm">
-                <div class="opacity-60">
-                  {{ $t('pages.dashboardDetail.topPanel.quarter') }}
+  <div>
+    <div class="bg-white rounded-md p-8">
+      <div class="flex items-center">
+        <div class="flex-1">
+          <div class="text-xl">{{ $t('pages.dashboardDetail.topPanel.title') }}</div>
+          <el-row :gutter="16" class="mt-6">
+            <el-col
+              v-for="item in PANE_LIST_DATA"
+              :key="item.title"
+              :sm="12"
+              :md="12"
+              :lg="6"
+              class="mb-4"
+            >
+              <div class="p-6 card rounded-md">
+                <div class="text-sm opacity-60 mb-3">
+                  {{ item.title }}
                 </div>
-                <trend
-                  :type="item.upTrend ? 'upTrend' : 'downTrend'"
-                  :count="item.upTrend ? item.upTrend : (item.downTrend as string)"
-                  class="flex-1"
-                />
-                <el-icon class="cursor-pointer opacity-60">
-                  <ArrowRightBold />
-                </el-icon>
+                <div class="text-3xl">{{ item.number }}</div>
+                <div class="flex items-center text-sm">
+                  <div class="opacity-60">
+                    {{ $t('pages.dashboardDetail.topPanel.quarter') }}
+                  </div>
+                  <trend
+                    :type="item.upTrend ? 'upTrend' : 'downTrend'"
+                    :count="item.upTrend ? item.upTrend : (item.downTrend as string)"
+                    class="flex-1"
+                  />
+                  <el-icon class="cursor-pointer opacity-60">
+                    <ArrowRightBold />
+                  </el-icon>
+                </div>
               </div>
-            </div>
-          </el-col>
-        </el-row>
+            </el-col>
+          </el-row>
+        </div>
       </div>
     </div>
-  </div>
-  <el-row class="mt-4" :gutter="16">
-    <el-col :lg="18" class="mb-4">
-      <div class="bg-white rounded-md p-8">
-        <div class="flex items-center flex-wrap">
-          <div class="flex-1">
-            <div class="text-xl text-nowrap">
-              {{ $t('pages.dashboardDetail.procurement.title') }}
+    <el-row class="mt-4" :gutter="16">
+      <el-col :lg="18" class="mb-4">
+        <div class="bg-white rounded-md p-8">
+          <div class="flex items-center flex-wrap">
+            <div class="flex-1">
+              <div class="text-xl text-nowrap">
+                {{ $t('pages.dashboardDetail.procurement.title') }}
+              </div>
+            </div>
+            <div>
+              <el-date-picker
+                v-model="value1"
+                type="daterange"
+                range-separator="To"
+                start-placeholder="Start date"
+                end-placeholder="End date"
+              />
             </div>
           </div>
-          <div>
-            <el-date-picker
-              v-model="value1"
-              type="daterange"
-              range-separator="To"
-              start-placeholder="Start date"
-              end-placeholder="End date"
-            />
+          <div id="lineContainer" class="mt-6" style="width: 100%; height: 416px" />
+        </div>
+      </el-col>
+      <el-col :lg="6">
+        <product-card v-for="(item, index) in PRODUCT_LIST" :key="index" :product="item" />
+      </el-col>
+    </el-row>
+    <card :title="$t('pages.dashboardDetail.satisfaction.title')">
+      <template #action>
+        <div class="flex items-center">
+          <el-date-picker
+            v-model="value2"
+            type="daterange"
+            range-separator="To"
+            start-placeholder="Start date"
+            end-placeholder="End date"
+          />
+          <div class="text-right ml-2">
+            <el-button type="primary">{{
+              $t('pages.dashboardDetail.satisfaction.export')
+            }}</el-button>
           </div>
         </div>
-        <div id="lineContainer" class="mt-6" style="width: 100%; height: 416px" />
-      </div>
-    </el-col>
-    <el-col :lg="6">
-      <product-card v-for="(item, index) in PRODUCT_LIST" :key="index" :product="item" />
-    </el-col>
-  </el-row>
-  <card :title="$t('pages.dashboardDetail.satisfaction.title')">
-    <template #action>
-      <div class="flex items-center">
-        <el-date-picker
-          v-model="value2"
-          type="daterange"
-          range-separator="To"
-          start-placeholder="Start date"
-          end-placeholder="End date"
-        />
-        <div class="text-right ml-2">
-          <el-button type="primary">{{
-            $t('pages.dashboardDetail.satisfaction.export')
-          }}</el-button>
-        </div>
-      </div>
-    </template>
-    <template #content>
-      <div id="scatterContainer" class="mt-6" style="width: 100%; height: 434px" />
-    </template>
-  </card>
+      </template>
+      <template #content>
+        <div id="scatterContainer" class="mt-6" style="width: 100%; height: 434px" />
+      </template>
+    </card>
+  </div>
 </template>
 <style scoped lang="scss">
 .card {
