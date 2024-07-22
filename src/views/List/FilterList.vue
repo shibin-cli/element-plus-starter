@@ -112,7 +112,7 @@ function resetForm() {
       <el-row :gutter="16">
         <el-col :lg="20" :md="18" :sm="18">
           <el-row :gutter="16">
-            <el-col :lg="6" :md="8" :sm="12">
+            <el-col :md="8" :sm="12">
               <el-form-item :label="$t('components.commonTable.contractName')" prop="name">
                 <el-input
                   v-model="formData.name"
@@ -120,7 +120,7 @@ function resetForm() {
                 />
               </el-form-item>
             </el-col>
-            <el-col :lg="6" :md="8" :sm="12">
+            <el-col :md="8" :sm="12">
               <el-form-item :label="$t('components.commonTable.contractStatus')" prop="status">
                 <el-select
                   v-model="formData.status"
@@ -137,7 +137,7 @@ function resetForm() {
                 </el-select>
               </el-form-item>
             </el-col>
-            <el-col :lg="6" :md="8" :sm="12">
+            <el-col :md="8" :sm="12">
               <el-form-item :label="$t('components.commonTable.contractNum')" prop="no">
                 <el-input
                   v-model="formData.no"
@@ -145,7 +145,7 @@ function resetForm() {
                 />
               </el-form-item>
             </el-col>
-            <el-col :lg="6" :md="8" :sm="12">
+            <el-col :md="8" :sm="12">
               <el-form-item :label="$t('components.commonTable.contractType')" prop="type">
                 <el-select
                   v-model="formData.type"

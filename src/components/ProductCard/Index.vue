@@ -1,15 +1,22 @@
 <script setup lang="ts">
-import { More, FolderAdd } from '@element-plus/icons-vue'
-import type { PropType } from 'vue'
-interface CardProductType {
-  type: number
-  isSetup: boolean
-  description: string
-  name: string
-}
-defineProps<{
-  product: CardProductType
+import { MoreFilled, FolderAdd } from '@element-plus/icons-vue'
+import type { CardList } from '@/types/list'
+
+const props = defineProps<{
+  product: CardList
 }>()
+const emits = defineEmits<{
+  (e: 'manage-product', product: CardList): void
+  (e: 'delete-product', product: CardList): void
+}>()
+
+const handleClickManage = () => {
+  emits('manage-product', props.product)
+}
+
+const handleClickDelete = () => {
+  emits('delete-product', props.product)
+}
 </script>
 <template>
   <div class="bg-white rounded-md p-6 mb-4">
@@ -18,9 +25,10 @@ defineProps<{
         <el-avatar :size="56" class=""> </el-avatar>
       </div>
       <div>
-        <el-button size="small" type="success">{{
-          product.isSetup ? $t('components.isSetup.on') : $t('components.isSetup.off')
+        <el-button size="small" type="success" v-if="product.isSetup">{{
+          $t('components.isSetup.on')
         }}</el-button>
+        <el-button size="small" v-else disabled>{{ $t('components.isSetup.off') }}</el-button>
       </div>
     </div>
     <div class="my-6">
@@ -40,7 +48,19 @@ defineProps<{
         </el-avatar>
       </div>
       <div>
-        <el-button :icon="More" text></el-button>
+        <el-dropdown trigger="click">
+          <el-button :icon="MoreFilled" text></el-button>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item @click="handleClickManage">{{
+                $t('components.manage')
+              }}</el-dropdown-item>
+              <el-dropdown-item @click="handleClickDelete">{{
+                $t('components.delete')
+              }}</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
       </div>
     </div>
   </div>

@@ -51,6 +51,10 @@ const menu: Menu = [
       {
         path: '/list/filter-list',
         title: '筛选列表页'
+      },
+      {
+        path: '/list/tree-list',
+        title: '树状筛选列表页'
       }
     ]
   },
