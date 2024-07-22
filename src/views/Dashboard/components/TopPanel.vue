@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Top, Bottom, ArrowRightBold } from '@element-plus/icons-vue'
+import { ArrowRightBold } from '@element-plus/icons-vue'
 import * as echarts from 'echarts'
 import { onMounted } from 'vue'
 import Trend from '@/components/Trend/Index.vue'
@@ -121,7 +121,7 @@ onMounted(() => {
 </script>
 <template>
   <el-row :gutter="16">
-    <el-col :xs="24" :sm="12" :md="12" :lg="6" v-for="(item, index) in PANE_LIST" :key="item.title">
+    <el-col v-for="(item, index) in PANE_LIST" :key="item.title" :xs="24" :sm="12" :md="12" :lg="6">
       <div class="card bg-white px-8 py-6 rounded-md mb-4" :class="{ active: index === 0 }">
         <div class="text-sm">{{ $t(item.title) }}</div>
         <div class="text-lg pt-2 mb-6 relative">

@@ -1,5 +1,5 @@
 import { t } from '@/locals'
-
+import type { CardList } from '@/types/list'
 export const PANE_LIST_DATA = [
   {
     title: t('pages.dashboardDetail.topPanel.paneList.totalRequest'),
@@ -34,7 +34,7 @@ export const PANE_LIST_DATA = [
   }
 ]
 
-export const PRODUCT_LIST = [
+export const PRODUCT_LIST: CardList[] = [
   {
     description: t('pages.dashboardDetail.sslDescription'),
     index: 1,

@@ -1,7 +1,7 @@
 export default {
   isSetup: {
     on: '已启用',
-    off: '已停用',
+    off: '已停用'
   },
   manage: '管理',
   delete: '删除',
@@ -25,14 +25,14 @@ export default {
       audit: '待审核',
       executing: '履行中',
       pending: '待履行',
-      finish: '已完成',
+      finish: '已完成'
     },
     contractTypeEnum: {
       main: '主合同',
       sub: '子合同',
-      supplement: '补充合同',
+      supplement: '补充合同'
     },
     reset: '重置',
-    query: '查询',
-  },
-};
+    query: '查询'
+  }
+}

@@ -17,7 +17,7 @@ export interface CardListResult {
   list: Array<CardList>
 }
 export interface CardList {
-  banner: string
+  banner?: string
   description: string
   index: number
   isSetup: boolean

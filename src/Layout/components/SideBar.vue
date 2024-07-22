@@ -2,8 +2,6 @@
 import LogoFullIcon from '@/assets/icons/assets-logo-full.svg?component'
 import LogoIcon from '@/assets/icons/assets-t-logo.svg?component'
 
-import { DataBoard, List } from '@element-plus/icons-vue'
-import { type DefineComponent } from 'vue'
 import useThemeStore from '@/stores/theme'
 import { useRoute } from 'vue-router'
 
@@ -76,7 +74,7 @@ const menu: Menu = [
   <div class="flex flex-col h-full">
     <div class="menu-logo">
       <logo-icon v-if="store.collapse" class="w-full h-[28px] cursor-pointer" />
-      <logo-full-icon class="w-full px-6 cursor-pointer h-[28px]" v-else />
+      <logo-full-icon v-else class="w-full px-6 cursor-pointer h-[28px]" />
     </div>
     <div class="flex-1 flex flex-col">
       <el-menu
@@ -93,13 +91,13 @@ const menu: Menu = [
                 <el-icon>
                   <svg-icon v-if="item.isSvgIcon" :icon="item.icon" />
 
-                  <component v-else :is="item.icon" />
+                  <component :is="item.icon" v-else />
                 </el-icon>
 
                 <span>{{ item.title }}</span>
               </template>
 
-              <el-menu-item :index="child.path" v-for="child in item.children" :key="child.path">{{
+              <el-menu-item v-for="child in item.children" :key="child.path" :index="child.path">{{
                 child.title
               }}</el-menu-item>
             </el-sub-menu>
@@ -108,7 +106,7 @@ const menu: Menu = [
             <el-menu-item :index="item.path">
               <el-icon>
                 <svg-icon v-if="item.isSvgIcon" :icon="item.icon" />
-                <component v-else :is="item.icon" />
+                <component :is="item.icon" v-else />
               </el-icon>
               <span>{{ item.title }}</span>
             </el-menu-item>

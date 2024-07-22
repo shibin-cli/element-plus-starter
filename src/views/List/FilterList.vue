@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { CONTRACT_STATUS, CONTRACT_TYPES } from '@/utils/constants'
+import { CONTRACT_STATUS, CONTRACT_TYPES, CONTRACT_PAYMENT_TYPES } from '@/utils/constants'
 import { getList } from '@/services/list'
 import type { ListModel } from '@/types/list'
 import Trend from '@/components/Trend/Index.vue'
@@ -172,7 +172,7 @@ function resetForm() {
         </el-col>
       </el-row>
     </el-form>
-    <el-table :data="list" class="mt-8" height="640" v-loading="loading">
+    <el-table v-loading="loading" :data="list" class="mt-8" height="640">
       <el-table-column
         v-for="column in COLUMNS"
         :key="column.colKey"
@@ -187,19 +187,19 @@ function resetForm() {
           <el-button type="danger" link>{{ $t('pages.listBase.delete') }}</el-button>
         </template>
         <template v-else-if="column.title === t('pages.listBase.contractStatus')" #default="scope">
-          <el-tag type="danger" v-if="scope.row.status === CONTRACT_STATUS.FAIL">
+          <el-tag v-if="scope.row.status === CONTRACT_STATUS.FAIL" type="danger">
             {{ $t('pages.listBase.contractStatusEnum.fail') }}
           </el-tag>
-          <el-tag type="warning" v-if="scope.row.status === CONTRACT_STATUS.AUDIT_PENDING">
+          <el-tag v-if="scope.row.status === CONTRACT_STATUS.AUDIT_PENDING" type="warning">
             {{ $t('pages.listBase.contractStatusEnum.audit') }}
           </el-tag>
-          <el-tag type="warning" v-if="scope.row.status === CONTRACT_STATUS.EXEC_PENDING">
+          <el-tag v-if="scope.row.status === CONTRACT_STATUS.EXEC_PENDING" type="warning">
             {{ $t('pages.listBase.contractStatusEnum.pending') }}
           </el-tag>
-          <el-tag type="success" v-if="scope.row.status === CONTRACT_STATUS.EXECUTING">
+          <el-tag v-if="scope.row.status === CONTRACT_STATUS.EXECUTING" type="success">
             {{ $t('pages.listBase.contractStatusEnum.executing') }}
           </el-tag>
-          <el-tag type="success" v-if="scope.row.status === CONTRACT_STATUS.FINISH">
+          <el-tag v-if="scope.row.status === CONTRACT_STATUS.FINISH" type="success">
             {{ $t('pages.listBase.contractStatusEnum.finish') }}
           </el-tag>
         </template>

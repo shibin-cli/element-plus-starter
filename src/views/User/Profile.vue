@@ -222,13 +222,13 @@ function getFolderLineDataSet({
               v-for="(item, index) in USER_INFO_LIST"
               :key="index"
               :label="$t(item.title)"
-              :labelStyle="{
+              :label-style="{
                 opacity: '.6'
               }"
-              :contentStyle="{
+              :content-style="{
                 opacity: '.6'
               }"
-              labelClassName="opacity-60"
+              label-class-name="opacity-60"
             >
               {{ item.content }}
             </el-descriptions-item>
@@ -282,7 +282,7 @@ function getFolderLineDataSet({
           <el-button :icon="MoreFilled" text />
         </template>
         <template #content>
-          <contact v-for="(item, index) in TEAM_MEMBERS" :key="item.title" v-bind="{ ...item }" />
+          <contact v-for="item in TEAM_MEMBERS" :key="item.title" v-bind="{ ...item }" />
         </template>
       </card>
       <card class="mt-4" :title="$t('pages.user.serviceProduction')">
@@ -291,7 +291,7 @@ function getFolderLineDataSet({
         </template>
         <template #content>
           <el-row>
-            <el-col :span="6" v-for="item in PRODUCT_LIST" :key="item">
+            <el-col v-for="item in PRODUCT_LIST" :key="item" :span="6">
               <el-avatar>{{ item.toUpperCase() }}</el-avatar>
             </el-col>
           </el-row>

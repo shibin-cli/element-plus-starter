@@ -14,13 +14,13 @@ export default {
     account: 'please enter account',
     password: 'please enter password',
     phone: 'please enter phone',
-    verification: 'please enter verification code',
+    verification: 'please enter verification code'
   },
   required: {
     account: 'account is required',
     phone: 'phone is required',
     password: 'password is required',
-    verification: 'verification code is require',
+    verification: 'verification code is require'
   },
-  sendVerification: 'send',
-};
+  sendVerification: 'send'
+}

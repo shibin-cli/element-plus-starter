@@ -5,5 +5,5 @@ export default {
   setRead: '设为已读',
   setUnread: '设为未读',
   delete: '删除通知',
-  empty: '暂无通知',
-};
+  empty: '暂无通知'
+}

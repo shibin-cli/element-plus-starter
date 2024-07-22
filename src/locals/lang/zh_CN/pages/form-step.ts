@@ -11,7 +11,7 @@ export default {
     contractTips: '请选择合同名称',
     invoiceType: '发票类型',
     amount: '开票金额',
-    submit: '提交申请',
+    submit: '提交申请'
   },
   step2: {
     title: '电子信息',
@@ -31,7 +31,7 @@ export default {
     bankPlaceholder: '请输入开户行',
     bankAccountPlaceholder: '请输入银行账号',
     emailPlaceholder: '请输入邮箱',
-    telPlaceholder: '请输入手机号',
+    telPlaceholder: '请输入手机号'
   },
   step3: {
     title: '发票已邮寄',
@@ -39,7 +39,7 @@ export default {
     consignee: '收货人',
     mobileNum: '手机号码',
     deliveryAddress: '收货地址',
-    fullAddress: '详细地址',
+    fullAddress: '详细地址'
   },
   step4: {
     title: '完成申请',
@@ -47,8 +47,8 @@ export default {
     finishTitle: '完成开票申请',
     finishTips: '预计1～3个工作日会将电子发票发至邮箱，发票邮寄请耐心等待',
     reapply: '再次申请',
-    check: '查看进度',
+    check: '查看进度'
   },
   preStep: '上一步',
-  nextStep: '下一步',
-};
+  nextStep: '下一步'
+}

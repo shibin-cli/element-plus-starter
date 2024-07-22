@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { getCardList } from '@/services/list'
 import type { CardList } from '@/types/list'
 import ProductCard from '@/components/ProductCard/Index.vue'
@@ -36,7 +36,7 @@ function onConfirmDelete() {
   <div>
     <div class="flex items-center mb-6">
       <div class="flex-1">
-        <el-button @click="formDialogVisible = true" type="primary">
+        <el-button type="primary" @click="formDialogVisible = true">
           {{ $t('pages.listCard.create') }}
         </el-button>
       </div>
@@ -51,14 +51,14 @@ function onConfirmDelete() {
     <dialog-form v-model="formDialogVisible" />
     <el-row :gutter="16">
       <el-col
-        :xl="6"
-        :md="8"
-        :sm="12"
         v-for="(product, index) in productList.slice(
           pageSize * (currentPage - 1),
           pageSize * currentPage
         )"
         :key="index"
+        :xl="6"
+        :md="8"
+        :sm="12"
       >
         <product-card
           :product="product"

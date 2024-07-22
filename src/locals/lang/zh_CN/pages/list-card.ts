@@ -8,6 +8,6 @@ export default {
   productRemark: '备注',
   productStatusEnum: {
     off: '停用',
-    on: '启用',
-  },
-};
+    on: '启用'
+  }
+}

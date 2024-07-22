@@ -5,5 +5,5 @@ export default {
   setRead: 'set as read',
   setUnread: 'set as unread',
   delete: 'delete',
-  empty: 'Empty',
-};
+  empty: 'Empty'
+}

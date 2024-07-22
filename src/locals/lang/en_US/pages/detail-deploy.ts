@@ -13,12 +13,12 @@ export default {
     week4: 'THU',
     week5: 'FRI',
     week6: 'SAT',
-    week7: 'SUN',
+    week7: 'SUN'
   },
   projectList: {
     title: 'Project List',
     dialog: {
-      title: 'Base Info',
+      title: 'Base Info'
     },
     table: {
       name: 'Name',
@@ -26,7 +26,7 @@ export default {
       createTime: 'Create time',
       operation: 'Operation',
       manage: 'manage',
-      delete: 'delete',
-    },
-  },
-};
+      delete: 'delete'
+    }
+  }
+}

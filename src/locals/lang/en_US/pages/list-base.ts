@@ -20,6 +20,6 @@ export default {
     audit: 'audit',
     executing: 'executing',
     pending: 'pending',
-    finish: 'finish',
-  },
-};
+    finish: 'finish'
+  }
+}

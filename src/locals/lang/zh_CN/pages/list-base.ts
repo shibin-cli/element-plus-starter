@@ -20,6 +20,6 @@ export default {
     audit: '待审核',
     executing: '履行中',
     pending: '待履行',
-    finish: '已完成',
-  },
-};
+    finish: '已完成'
+  }
+}

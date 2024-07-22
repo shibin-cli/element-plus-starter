@@ -9,7 +9,6 @@ body {
   background-color: $bg-color;
 }
 
-
 .fade-leave-active,
 .fade-enter-active {
   transition: opacity $anim-duration-slow $anim-time-fn-easing;

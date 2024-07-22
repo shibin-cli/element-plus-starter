@@ -8,6 +8,6 @@ export default {
   productRemark: 'Remark',
   productStatusEnum: {
     off: 'off',
-    on: 'on',
-  },
-};
+    on: 'on'
+  }
+}

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { User, Lock, Refresh } from '@element-plus/icons-vue'
+import { Refresh } from '@element-plus/icons-vue'
 import QrcodeVue from 'qrcode.vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
@@ -22,9 +22,9 @@ const formData = ref({
     <template v-if="type == 'password'">
       <el-form-item>
         <el-input
+          v-model="formData.username"
           size="large"
           autocomplete="off"
-          v-model="formData.username"
           :placeholder="$t('pages.login.input.account')"
         >
           <template #prefix>
@@ -34,11 +34,11 @@ const formData = ref({
       </el-form-item>
       <el-form-item>
         <el-input
+          v-model="formData.password"
           size="large"
           type="password"
           autocomplete="off"
           show-password
-          v-model="formData.password"
           :placeholder="$t('pages.login.input.password')"
         >
           <template #prefix>
@@ -63,9 +63,9 @@ const formData = ref({
     <template v-else>
       <el-form-item>
         <el-input
+          v-model="formData.phone"
           size="large"
           autocomplete="off"
-          v-model="formData.phone"
           :placeholder="$t('pages.login.input.phone')"
         >
           <template #prefix>
@@ -76,9 +76,9 @@ const formData = ref({
       <el-form-item>
         <div class="flex w-full">
           <el-input
+            v-model="formData.code"
             size="large"
             autocomplete="off"
-            v-model="formData.code"
             :placeholder="$t('pages.login.input.verification')"
             class="flex-1 mr-3"
           />
@@ -89,19 +89,19 @@ const formData = ref({
       </el-form-item>
     </template>
   </el-form>
-  <el-form-item class="mt-10" v-if="type !== 'qrcode'">
+  <el-form-item v-if="type !== 'qrcode'" class="mt-10">
     <el-button type="primary" size="large" class="w-full" @click="router.push('/')">{{
       $t('pages.login.signIn')
     }}</el-button>
   </el-form-item>
   <div class="mt-6 primary text-sm">
-    <span class="cursor-pointer mr-4" v-if="type !== 'password'" @click="switchType('password')">{{
+    <span v-if="type !== 'password'" class="cursor-pointer mr-4" @click="switchType('password')">{{
       $t('pages.login.accountLogin')
     }}</span>
-    <span class="cursor-pointer mr-4" v-if="type !== 'qrcode'" @click="switchType('qrcode')">{{
+    <span v-if="type !== 'qrcode'" class="cursor-pointer mr-4" @click="switchType('qrcode')">{{
       $t('pages.login.wechatLogin')
     }}</span>
-    <span class="cursor-pointer" v-if="type !== 'phone'" @click="switchType('phone')">{{
+    <span v-if="type !== 'phone'" class="cursor-pointer" @click="switchType('phone')">{{
       $t('pages.login.phoneLogin')
     }}</span>
   </div>

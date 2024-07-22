@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Lock } from '@element-plus/icons-vue'
-import QrcodeVue from 'qrcode.vue'
+
 const countDown = ref(0)
 
 const type = ref('phone')
@@ -20,9 +19,9 @@ const formData = ref({
     <template v-if="type === 'phone'">
       <el-form-item>
         <el-input
+          v-model="formData.phone"
           size="large"
           autocomplete="off"
-          v-model="formData.phone"
           placeholder="请输入您的手机号"
         >
           <template #prefix>
@@ -33,9 +32,9 @@ const formData = ref({
     <template v-if="type === 'email'">
       <el-form-item>
         <el-input
+          v-model="formData.email"
           size="large"
           autocomplete="off"
-          v-model="formData.email"
           placeholder="请输入您的邮箱"
         >
           <template #prefix>
@@ -47,11 +46,11 @@ const formData = ref({
 
     <el-form-item>
       <el-input
+        v-model="formData.password"
         size="large"
         type="password"
         autocomplete="off"
         show-password
-        v-model="formData.password"
         placeholder="请输入登录密码"
       >
         <template #prefix>
@@ -62,9 +61,9 @@ const formData = ref({
     <el-form-item>
       <div class="flex w-full">
         <el-input
+          v-model="formData.code"
           size="large"
           autocomplete="off"
-          v-model="formData.code"
           :placeholder="$t('pages.login.input.verification')"
           class="flex-1 mr-3"
         />
@@ -80,7 +79,7 @@ const formData = ref({
       <div class="primary text-sm cursor-pointer leading-8 ml-1">隐私声明</div>
     </div>
   </el-form>
-  <el-form-item class="mt-10" v-if="type !== 'qrcode'">
+  <el-form-item v-if="type !== 'qrcode'" class="mt-10">
     <el-button type="primary" size="large" class="w-full">{{ $t('pages.login.signIn') }}</el-button>
   </el-form-item>
   <div class="mt-6 primary text-sm">

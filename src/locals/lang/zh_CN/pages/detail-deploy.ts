@@ -13,12 +13,12 @@ export default {
     week4: '周四',
     week5: '周五',
     week6: '周六',
-    week7: '周日',
+    week7: '周日'
   },
   projectList: {
     title: '项目列表',
     dialog: {
-      title: '基本信息',
+      title: '基本信息'
     },
     table: {
       name: '名称',
@@ -26,7 +26,7 @@ export default {
       createTime: '创建时间',
       operation: '操作',
       manage: '管理',
-      delete: '删除',
-    },
-  },
-};
+      delete: '删除'
+    }
+  }
+}

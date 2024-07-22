@@ -25,10 +25,10 @@ const handleClickDelete = () => {
         <el-avatar :size="56" class=""> </el-avatar>
       </div>
       <div>
-        <el-button size="small" type="success" v-if="product.isSetup">{{
+        <el-button v-if="product.isSetup" size="small" type="success">{{
           $t('components.isSetup.on')
         }}</el-button>
-        <el-button size="small" v-else disabled>{{ $t('components.isSetup.off') }}</el-button>
+        <el-button v-else size="small" disabled>{{ $t('components.isSetup.off') }}</el-button>
       </div>
     </div>
     <div class="my-6">

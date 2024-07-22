@@ -1,7 +1,7 @@
 export default {
   isSetup: {
     on: 'Enabled',
-    off: 'Disabled',
+    off: 'Disabled'
   },
   manage: 'Manage',
   delete: 'Delete',
@@ -24,14 +24,14 @@ export default {
       audit: 'audit',
       executing: 'executing',
       pending: 'pending',
-      finish: 'finish',
+      finish: 'finish'
     },
     contractTypeEnum: {
       main: 'main',
       sub: 'sub',
-      supplement: 'supplement',
+      supplement: 'supplement'
     },
     reset: 'reset',
-    query: 'query',
-  },
-};
+    query: 'query'
+  }
+}

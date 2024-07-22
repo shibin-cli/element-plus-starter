@@ -15,13 +15,13 @@ export default {
     account: '请输入账号',
     password: '请输入登录密码',
     phone: '请输入手机号',
-    verification: '请输入验证码',
+    verification: '请输入验证码'
   },
   required: {
     account: '账号必填',
     phone: '手机号必填',
     password: '密码必填',
-    verification: '验证码必填',
+    verification: '验证码必填'
   },
-  sendVerification: '发送验证码',
-};
+  sendVerification: '发送验证码'
+}

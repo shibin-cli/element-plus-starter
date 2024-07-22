@@ -40,7 +40,7 @@ function handleSubmit() {
 </script>
 <template>
   <el-dialog v-model="visible" :title="$t('pages.listCard.create')" :width="680">
-    <el-form :label-width="100" :model="formData" :rules="rules" ref="formRef" class="pr-5">
+    <el-form ref="formRef" :label-width="100" :model="formData" :rules="rules" class="pr-5">
       <el-form-item :label="$t('pages.listCard.productName')" prop="name">
         <el-input v-model="formData.name" />
       </el-form-item>

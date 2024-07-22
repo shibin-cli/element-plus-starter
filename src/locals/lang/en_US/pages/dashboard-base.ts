@@ -5,15 +5,15 @@ export default {
     export: 'Export data',
     month: {
       input: 'Total in store this month',
-      output: 'Total out store this month',
+      output: 'Total out store this month'
     },
-    since: 'Since last week',
+    since: 'Since last week'
   },
   rankList: {
     title: 'Sales order ranking',
     week: 'This week',
     month: 'Latest 3 months',
-    info: 'Detail',
+    info: 'Detail'
   },
   topPanel: {
     card1: 'Total Revenue',
@@ -29,22 +29,22 @@ export default {
       channels: 'Sales Channels',
       channel1: 'online',
       channel2: 'shop',
-      channelTips: ' sales ratio',
-    },
+      channelTips: ' sales ratio'
+    }
   },
   saleColumns: {
     index: 'Ranking',
     productName: 'Customer',
     growUp: 'Grow up',
     count: 'Count',
-    operation: 'Operation',
+    operation: 'Operation'
   },
   buyColumns: {
     index: 'Ranking',
     productName: 'Supplier',
     growUp: 'Grow up',
     count: 'Count',
-    operation: 'Operation',
+    operation: 'Operation'
   },
   chart: {
     week1: 'MON',
@@ -57,6 +57,6 @@ export default {
     max: 'Max',
     min: 'Min',
     thisMonth: 'this month',
-    lastMonth: 'last month',
-  },
-};
+    lastMonth: 'last month'
+  }
+}

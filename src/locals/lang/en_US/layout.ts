@@ -4,7 +4,7 @@ export default {
     help: 'Document',
     user: 'Profile',
     signOut: 'Sign Out',
-    setting: 'Setting',
+    setting: 'Setting'
   },
   notice: {
     title: 'Notification Center',
@@ -12,13 +12,13 @@ export default {
     setRead: 'Set Read',
     empty: 'Empty',
     emptyNotice: 'No Notice',
-    viewAll: 'View All',
+    viewAll: 'View All'
   },
   tagTabs: {
     closeOther: 'close other',
     closeLeft: 'close left',
     closeRight: 'close right',
-    refresh: 'refresh',
+    refresh: 'refresh'
   },
   searchPlaceholder: 'Enter search content',
   setting: {
@@ -29,8 +29,8 @@ export default {
       options: {
         light: 'Light',
         dark: 'Dark ',
-        auto: 'Follow System',
-      },
+        auto: 'Follow System'
+      }
     },
     navigationLayout: 'Navigation Layout',
     sideMode: 'Side Menu Mode',
@@ -41,13 +41,13 @@ export default {
       showHeader: 'Show Header',
       showBreadcrumb: 'Show Breadcrumb',
       showFooter: 'Show Footer',
-      useTagTabs: 'Use Tag Tabs',
+      useTagTabs: 'Use Tag Tabs'
     },
     tips: 'Please copy and manually modify the configuration file: /src/config/style.ts',
     copy: {
       title: 'Copy',
       success: 'copied',
-      fail: 'fail to copy',
-    },
-  },
-};
+      fail: 'fail to copy'
+    }
+  }
+}

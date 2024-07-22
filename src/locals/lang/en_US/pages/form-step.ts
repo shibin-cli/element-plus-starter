@@ -11,7 +11,7 @@ export default {
     contractTips: 'Please select a contract name',
     invoiceType: 'Invoice type',
     amount: 'Amount',
-    submit: 'Submit Application',
+    submit: 'Submit Application'
   },
   step2: {
     title: 'Electronic Information',
@@ -29,7 +29,7 @@ export default {
     bankPlaceholder: 'please enter bank',
     bankAccountPlaceholder: 'please enter bank account',
     emailPlaceholder: 'please enter email',
-    telPlaceholder: 'please enter tel',
+    telPlaceholder: 'please enter tel'
   },
   step3: {
     title: 'Invoice Mailed',
@@ -37,7 +37,7 @@ export default {
     consignee: 'Consignee',
     mobileNum: 'Mobile Num',
     deliveryAddress: 'Address',
-    fullAddress: 'Full Address',
+    fullAddress: 'Full Address'
   },
   step4: {
     title: 'Application Completed',
@@ -46,8 +46,8 @@ export default {
     finishTips:
       'The electronic invoice is expected to be sent to your email within 1-3 working days. Please be patient for the delivery of the paper invoice.',
     reapply: 'reapply',
-    check: 'check progress',
+    check: 'check progress'
   },
   preStep: 'pre step',
-  nextStep: 'next step',
-};
+  nextStep: 'next step'
+}

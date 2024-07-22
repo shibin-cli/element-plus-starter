@@ -7,6 +7,8 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import svgLoader from 'vite-svg-loader'
 import { viteMockServe } from 'vite-plugin-mock'
+// @ts-ignore
+import eslint from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -32,6 +34,7 @@ export default defineConfig({
     viteMockServe({
       mockPath: 'mock',
       enable: true
-    })
+    }),
+    eslint()
   ]
 })

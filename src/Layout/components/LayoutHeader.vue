@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import LogoFullIcon from '@/assets/icons/assets-logo-full.svg?component'
 import { Expand, Fold, ArrowDown } from '@element-plus/icons-vue'
 import useThemeStore from '@/stores/theme'
 import { useRouter } from 'vue-router'

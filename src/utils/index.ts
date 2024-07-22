@@ -13,18 +13,20 @@ export const LAST_7_DAYS = [
   dayjs().subtract(7, 'day').format('YYYY-MM-DD'),
   dayjs().subtract(1, 'day').format('YYYY-MM-DD')
 ]
-export function debounce(func: Function, wait: number) {
-  let timeout: NodeJS.Timeout
+export function debounce<T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): (...args: Parameters<T>) => void {
+  let timeoutId: ReturnType<typeof setTimeout> | null = null
 
-  return function executedFunction() {
-    clearTimeout(timeout)
+  return (...args: Parameters<T>): void => {
+    if (timeoutId !== null) {
+      clearTimeout(timeoutId)
+    }
 
-    timeout = setTimeout(() => {
-      func()
-    }, wait)
+    timeoutId = setTimeout(() => func(...args), wait)
   }
 }
-
 /**
  * 获取表头数据
  *

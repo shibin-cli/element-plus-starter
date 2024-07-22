@@ -23,5 +23,5 @@ export default {
   remarkPlaceholder: 'please enter remark',
   notaryPublic: 'Notary Public',
   confirm: 'confirm',
-  cancel: 'cancel',
-};
+  cancel: 'cancel'
+}

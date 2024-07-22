@@ -2,8 +2,6 @@
 import { ref, onMounted } from 'vue'
 import dayjs from 'dayjs'
 import * as echarts from 'echarts'
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
 
 const currentMonth = ref('2022-01 至 20223-01')
 const value1 = ref('')
@@ -32,12 +30,7 @@ function renderChart() {
   countChart = echarts.init(countContainer)
   countChart.setOption(getPieChartDataSet({}))
 }
-function getPieChartDataSet({
-  radius = 42,
-  textColor,
-  placeholderColor,
-  containerColor
-}: { radius?: number } & Record<string, string>) {
+function getPieChartDataSet({ radius = 42 }: { radius?: number } & Record<string, string>) {
   return {
     // color: getChartListColor(),
     tooltip: {
@@ -126,9 +119,7 @@ function getPieChartDataSet({
 }
 
 function getLineChartDataSet({
-  dateTime = [],
-  placeholderColor,
-  borderColor
+  dateTime = []
 }: { dateTime?: Array<string> } & Record<string, string>) {
   const divideNum = 10
   const timeArray = []

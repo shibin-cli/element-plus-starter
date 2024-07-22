@@ -110,7 +110,7 @@ const BUY_TEND_LIST: Array<TendItem> = [
           :width="column.width"
           :align="column.align"
         >
-          <template #default="scope" v-if="column.colKey === 'growUp'">
+          <template v-if="column.colKey === 'growUp'" #default="scope">
             <Trend
               :type="scope.row.growUp > 0 ? 'upTrend' : 'downTrend'"
               :count="Math.abs(scope.row.growUp)"

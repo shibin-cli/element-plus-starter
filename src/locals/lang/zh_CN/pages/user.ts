@@ -12,11 +12,11 @@ export default {
       leader: '上级',
       entity: '主体',
       joinDay: '入职时间',
-      group: '所属团队',
-    },
+      group: '所属团队'
+    }
   },
   visitData: '首页访问数据',
   contentList: '内容列表',
   teamMember: '团队成员',
-  serviceProduction: '服务产品',
-};
+  serviceProduction: '服务产品'
+}

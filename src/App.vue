@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { Search } from '@element-plus/icons-vue'
+import { computed } from 'vue'
+// import { Search } from '@element-plus/icons-vue'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import en from 'element-plus/es/locale/lang/en'
 import useThemeStore from '@/stores/theme'
@@ -10,48 +10,48 @@ import { ElConfigProvider } from 'element-plus'
 const store = useThemeStore()
 
 const locale = computed(() => (store.lang === 'zh-cn' ? zhCn : en))
-interface User {
-  date: string
-  name: string
-  address: string
-}
+// interface User {
+//   date: string
+//   name: string
+//   address: string
+// }
 
-const search = ref('')
-const filterTableData = computed(() =>
-  tableData.filter(
-    (data) => !search.value || data.name.toLowerCase().includes(search.value.toLowerCase())
-  )
-)
+// const search = ref('')
+// const filterTableData = computed(() =>
+//   tableData.filter(
+//     (data) => !search.value || data.name.toLowerCase().includes(search.value.toLowerCase())
+//   )
+// )
 
-const handleEdit = (index: number, row: User) => {
-  console.log(index, row)
-}
-const handleDelete = (index: number, row: User) => {
-  console.log(index, row)
-}
+// const handleEdit = (index: number, row: User) => {
+//   console.log(index, row)
+// }
+// const handleDelete = (index: number, row: User) => {
+//   console.log(index, row)
+// }
 
-const tableData: User[] = [
-  {
-    date: '2016-05-03',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles'
-  },
-  {
-    date: '2016-05-02',
-    name: 'John',
-    address: 'No. 189, Grove St, Los Angeles'
-  },
-  {
-    date: '2016-05-04',
-    name: 'Morgan',
-    address: 'No. 189, Grove St, Los Angeles'
-  },
-  {
-    date: '2016-05-01',
-    name: 'Jessy',
-    address: 'No. 189, Grove St, Los Angeles'
-  }
-]
+// const tableData: User[] = [
+//   {
+//     date: '2016-05-03',
+//     name: 'Tom',
+//     address: 'No. 189, Grove St, Los Angeles'
+//   },
+//   {
+//     date: '2016-05-02',
+//     name: 'John',
+//     address: 'No. 189, Grove St, Los Angeles'
+//   },
+//   {
+//     date: '2016-05-04',
+//     name: 'Morgan',
+//     address: 'No. 189, Grove St, Los Angeles'
+//   },
+//   {
+//     date: '2016-05-01',
+//     name: 'Jessy',
+//     address: 'No. 189, Grove St, Los Angeles'
+//   }
+// ]
 </script>
 
 <template>

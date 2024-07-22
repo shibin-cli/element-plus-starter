@@ -13,11 +13,11 @@ export default {
       leader: 'Leader',
       entity: 'Entity',
       joinDay: 'Day of join',
-      group: 'Group',
-    },
+      group: 'Group'
+    }
   },
   contentList: 'Content List',
   visitData: 'Visit Data',
   teamMember: 'Team Member',
-  serviceProduction: 'Service Product',
-};
+  serviceProduction: 'Service Product'
+}
