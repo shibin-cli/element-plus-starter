@@ -43,16 +43,32 @@ const menu: Menu = [
         title: '基础列表页'
       },
       {
-        path: '/list/card-list',
+        path: '/list/card',
         title: '卡片列表页'
       },
       {
-        path: '/list/filter-list',
+        path: '/list/filter',
         title: '筛选列表页'
       },
       {
-        path: '/list/tree-list',
+        path: '/list/tree',
         title: '树状筛选列表页'
+      }
+    ]
+  },
+  {
+    path: '/form',
+    title: '表单页',
+    isSvgIcon: true,
+    icon: 'edit',
+    children: [
+      {
+        path: '/form',
+        title: '基础表单页'
+      },
+      {
+        path: '/form/step',
+        title: '分步表单页'
       }
     ]
   },

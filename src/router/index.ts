@@ -40,19 +40,35 @@ const router = createRouter({
               component: () => import('@/views/List/BaseList.vue')
             },
             {
-              path: 'card-list',
+              path: 'card',
               name: 'cardList',
               component: () => import('@/views/List/CardList.vue')
             },
             {
-              path: 'filter-list',
+              path: 'filter',
               name: 'filterList',
               component: () => import('@/views/List/FilterList.vue')
             },
             {
-              path: 'tree-list',
+              path: 'tree',
               name: 'tree',
               component: () => import('@/views/List/TreeList.vue')
+            }
+          ]
+        },
+        {
+          path: 'form',
+          name: 'form',
+          children: [
+            {
+              path: '',
+              name: 'baseForm',
+              component: () => import('@/views/Form/BaseForm/Index.vue')
+            },
+            {
+              path: 'step',
+              name: 'stepForm',
+              component: () => import('@/views/Form/StepForm/Index.vue')
             }
           ]
         },
