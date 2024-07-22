@@ -47,6 +47,10 @@ const menu: Menu = [
       {
         path: '/list/card-list',
         title: '卡片列表页'
+      },
+      {
+        path: '/list/filter-list',
+        title: '筛选列表页'
       }
     ]
   },

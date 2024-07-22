@@ -52,9 +52,12 @@ const COLUMNS = [
 ]
 const selectedRowKeys = ref<ListModel[]>([])
 const list = ref<ListModel[]>([])
-function loadData() {
+function loadData(page = 1, pageSize = 20) {
   loading.value = true
-  getList().then((res) => {
+  getList({
+    page,
+    pageSize
+  }).then((res) => {
     loading.value = false
     list.value = res.data.list
   })
@@ -63,7 +66,7 @@ function handleSelectionChange(selectedKeys: ListModel[]) {
   selectedRowKeys.value = selectedKeys
 }
 function handlePageChange(currentPage: number, pageSize: number) {
-  loadData()
+  loadData(currentPage, pageSize)
 }
 loadData()
 </script>
@@ -91,7 +94,7 @@ loadData()
     <el-table
       :data="list"
       class="mt-8"
-      height="600"
+      height="640"
       @selection-change="handleSelectionChange"
       v-loading="loading"
     >

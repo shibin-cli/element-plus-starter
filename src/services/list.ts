@@ -6,8 +6,15 @@ const Api = {
   CardList: '/get-card-list'
 }
 
-export function getList() {
-  return request.get<{ data: ListResult }>(Api.BaseList).then((res) => res.data)
+export function getList({ page, pageSize }: { page: number; pageSize: number }) {
+  return request
+    .get<{ data: ListResult }>(Api.BaseList, {
+      params: {
+        page,
+        pageSize
+      }
+    })
+    .then((res) => res.data)
 }
 
 export function getCardList() {

@@ -43,6 +43,11 @@ const router = createRouter({
               path: 'card-list',
               name: 'cardList',
               component: () => import('@/views/List/CardList.vue')
+            },
+            {
+              path: 'filter-list',
+              name: 'filterList',
+              component: () => import('@/views/List/FilterList.vue')
             }
           ]
         },
