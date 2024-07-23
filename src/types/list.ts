@@ -24,3 +24,14 @@ export interface CardList {
   name: string
   type: number
 }
+
+export interface IProduct {
+  name: string
+  subtitle: string
+  size: string
+  cpu: string
+  memory: string
+  info: string
+  use: number
+  stock: number
+}

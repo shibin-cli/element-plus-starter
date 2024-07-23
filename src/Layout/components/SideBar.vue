@@ -12,6 +12,11 @@ interface MenuItem {
   icon?: any
   isSvgIcon?: boolean
   children?: MenuItem[]
+  // 是否为外部链接
+  meta?: {
+    frameSrc?: string
+    frameBlank?: boolean
+  }
 }
 type Menu = MenuItem[]
 const store = useThemeStore()
@@ -73,6 +78,62 @@ const menu: Menu = [
     ]
   },
   {
+    path: '/detail',
+    title: '详情页',
+    isSvgIcon: true,
+    icon: 'layers',
+    children: [
+      {
+        path: '/detail',
+        title: '基础详情页'
+      },
+      {
+        path: '/detail/advanced',
+        title: '卡片表单页'
+      },
+      {
+        path: '/detail/deploy',
+        title: '数据详情页'
+      },
+      {
+        path: '/detail/secondary',
+        title: '二级详情页'
+      }
+    ]
+  },
+  {
+    path: '/frame',
+    title: '外部网页',
+    isSvgIcon: true,
+    icon: 'language',
+    children: [
+      {
+        path: '/frame/doc',
+        title: '使用文档（内嵌）',
+        meta: {
+          frameSrc: 'https://element-plus.org/zh-CN/guide/quickstart.html',
+          frameBlank: false
+        }
+      },
+      {
+        path: '/frame/element-plus',
+        title: 'Element-plus文档（内嵌）',
+        meta: {
+          frameSrc: 'https://element-plus.gitee.io/#/zh-CN',
+          frameBlank: false
+        }
+      },
+      {
+        path: '/frame/element-plus',
+        title: 'Element-plus文档（外链）',
+        meta: {
+          frameSrc: 'https://element-plus.gitee.io/#/zh-CN',
+          frameBlank: true
+        }
+      }
+    ]
+  },
+  {
     path: '/profile',
     title: '个人中心',
     isSvgIcon: true,
@@ -85,6 +146,17 @@ const menu: Menu = [
     icon: 'login'
   }
 ]
+const getHref = (item: MenuItem) => {
+  if (!item.meta) return
+  const { frameSrc = '', frameBlank = false } = item.meta
+  if (frameSrc && frameBlank) {
+    return frameSrc.match(/(http|https):\/\/([\w.]+\/?)\S*/)
+  }
+  return null
+}
+const openHref = (url: string) => {
+  window.open(url)
+}
 </script>
 <template>
   <div class="flex flex-col h-full">
@@ -113,13 +185,25 @@ const menu: Menu = [
                 <span>{{ item.title }}</span>
               </template>
 
-              <el-menu-item v-for="child in item.children" :key="child.path" :index="child.path">{{
-                child.title
-              }}</el-menu-item>
+              <template v-for="child in item.children" :key="child.path">
+                <el-menu-item
+                  v-if="child.meta?.frameSrc && getHref(child)"
+                  @click="openHref(child.meta.frameSrc)"
+                >
+                  <span>{{ child.title }}</span>
+                </el-menu-item>
+                <el-menu-item v-else :index="child.path">{{ child.title }}</el-menu-item>
+              </template>
             </el-sub-menu>
           </template>
           <template v-else>
-            <el-menu-item :index="item.path">
+            <el-menu-item
+              v-if="item.meta?.frameSrc && getHref(item)"
+              @click="openHref(item.meta.frameSrc)"
+            >
+              <span>{{ item.title }} frame</span>
+            </el-menu-item>
+            <el-menu-item v-else :index="item.path">
               <el-icon>
                 <svg-icon v-if="item.isSvgIcon" :icon="item.icon" />
                 <component :is="item.icon" v-else />

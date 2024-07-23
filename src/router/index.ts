@@ -57,6 +57,56 @@ const router = createRouter({
           ]
         },
         {
+          path: 'detail',
+          name: 'detail',
+          children: [
+            {
+              path: '',
+              name: 'baseDetail',
+              component: () => import('@/views/Detail/Base/Index.vue')
+            },
+            {
+              path: 'advanced',
+              name: 'advancedDetail',
+              component: () => import('@/views/Detail/Advanced/Index.vue')
+            },
+            {
+              path: 'deploy',
+              name: 'deployDetail',
+              component: () => import('@/views/Detail/Deploy/Index.vue')
+            },
+            {
+              path: 'secondary',
+              name: 'secondaryDetail',
+              component: () => import('@/views/Detail/Secondary/Index.vue')
+            }
+          ]
+        },
+        {
+          path: '/frame',
+          name: 'frame',
+          children: [
+            {
+              path: 'doc',
+              name: 'doc',
+              component: () => import('@/views/Frame/Index.vue'),
+              meta: {
+                frameSrc: 'https://element-plus.org/zh-CN',
+                frameBlank: false
+              }
+            },
+            {
+              path: 'element-plus',
+              name: 'element-plus',
+              component: () => import('@/views/Frame/Index.vue'),
+              meta: {
+                frameSrc: 'https://element-plus.org/zh-CN/component/overview.html',
+                frameBlank: false
+              }
+            }
+          ]
+        },
+        {
           path: 'form',
           name: 'form',
           children: [

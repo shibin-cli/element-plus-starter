@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import LayoutHeader from './components/LayoutHeader.vue'
 import SideBar from './components/SideBar.vue'
-
+import Frame from './components/Frame.vue'
 import useThemeStore from '@/stores/theme'
 
 const store = useThemeStore()
@@ -25,6 +25,7 @@ const store = useThemeStore()
               <component :is="Component" />
             </transition>
           </router-view>
+          <frame />
         </el-main>
       </el-scrollbar>
     </el-container>
