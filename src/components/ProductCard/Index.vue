@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MoreFilled, FolderAdd } from '@element-plus/icons-vue'
+import { MoreFilled } from '@element-plus/icons-vue'
 import type { CardList } from '@/types/list'
 
 const props = defineProps<{
@@ -40,11 +40,8 @@ const handleClickDelete = () => {
     <div class="flex items-center">
       <div class="flex-1 flex items-center">
         <el-avatar :size="36" class="border-2 border-white border-solid"> </el-avatar>
-        <el-avatar
-          :size="36"
-          class="border-2 border-white border-solid ml-[-6px]"
-          :icon="FolderAdd"
-        >
+        <el-avatar :size="36" class="border-2 border-white border-solid ml-[-6px] cursor-pointer">
+          <svg-icon icon="add" />
         </el-avatar>
       </div>
       <div>

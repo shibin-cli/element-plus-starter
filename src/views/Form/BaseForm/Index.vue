@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { type FormInstance } from 'element-plus'
-import { FolderAdd } from '@element-plus/icons-vue'
 import {
   FORM_RULES,
   INITIAL_DATA,
@@ -130,11 +129,8 @@ function handleSubmit() {
       </el-form-item>
       <el-form-item :label="$t('pages.formBase.notaryPublic')">
         <el-avatar :size="36" class="border-2 border-white border-solid"> </el-avatar>
-        <el-avatar
-          :size="36"
-          class="border-2 border-white border-solid ml-[-6px]"
-          :icon="FolderAdd"
-        >
+        <el-avatar :size="36" class="border-2 border-white border-solid ml-[-6px] cursor-pointer">
+          <svg-icon icon="add" />
         </el-avatar>
       </el-form-item>
       <el-form-item class="mt-8">
