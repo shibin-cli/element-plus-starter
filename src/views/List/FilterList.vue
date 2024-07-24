@@ -214,10 +214,7 @@ function resetForm() {
             {{ $t('pages.listBase.contractStatusEnum.pending') }}
           </p>
         </template>
-        <template
-          v-else-if="column.title === t('pages.listBase.contractPayType')"
-          #default="{ row }"
-        >
+        <template v-else-if="column.colKey === 'paymentType'" #default="{ row }">
           <div
             v-if="row.paymentType === CONTRACT_PAYMENT_TYPES.PAYMENT"
             class="payment-col flex items-center"
