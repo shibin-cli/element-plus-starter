@@ -83,7 +83,7 @@ const router = createRouter({
           ]
         },
         {
-          path: '/frame',
+          path: 'frame',
           name: 'frame',
           children: [
             {
@@ -103,6 +103,52 @@ const router = createRouter({
                 frameSrc: 'https://element-plus.org/zh-CN/component/overview.html',
                 frameBlank: false
               }
+            }
+          ]
+        },
+        {
+          path: 'result',
+          name: 'result',
+          children: [
+            {
+              path: 'success',
+              name: 'success',
+              component: () => import('@/views/Result/Success.vue')
+            },
+            {
+              path: 'fail',
+              name: 'fail',
+              component: () => import('@/views/Result/Fail.vue')
+            },
+            {
+              path: 'network-error',
+              name: 'networkError',
+              component: () => import('@/views/Result/NetworkError.vue')
+            },
+            {
+              path: '403',
+              name: '403',
+              component: () => import('@/views/Result/403.vue')
+            },
+            {
+              path: '404',
+              name: '404',
+              component: () => import('@/views/Result/404.vue')
+            },
+            {
+              path: '500',
+              name: '500',
+              component: () => import('@/views/Result/500.vue')
+            },
+            {
+              path: 'browser-incompatible',
+              name: 'BrowserIncompatible',
+              component: () => import('@/views/Result/BrowserIncompatible.vue')
+            },
+            {
+              path: 'maintenance',
+              name: 'maintenance',
+              component: () => import('@/views/Result/Maintenance.vue')
             }
           ]
         },

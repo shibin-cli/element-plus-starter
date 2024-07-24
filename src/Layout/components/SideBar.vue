@@ -134,6 +134,45 @@ const menu: Menu = [
     ]
   },
   {
+    path: 'result',
+    title: '结果页',
+    icon: 'circle-check',
+    children: [
+      {
+        path: '/result/success',
+        title: '成功页'
+      },
+      {
+        path: '/result/fail',
+        title: '失败页'
+      },
+      {
+        path: '/result/network-error',
+        title: '网络异常'
+      },
+      {
+        path: '/result/403',
+        title: '无权限'
+      },
+      {
+        path: '/result/404',
+        title: '访问页面不存在页'
+      },
+      {
+        path: '/result/500',
+        title: '服务器出错页'
+      },
+      {
+        path: '/result/browser-incompatible',
+        title: '浏览器不兼容页'
+      },
+      {
+        path: '/result/maintenance',
+        title: '系统维护页'
+      }
+    ]
+  },
+  {
     path: '/profile',
     title: '个人中心',
     isSvgIcon: true,
@@ -178,7 +217,6 @@ const openHref = (url: string) => {
               <template #title>
                 <el-icon>
                   <svg-icon v-if="item.isSvgIcon" :icon="item.icon" />
-
                   <component :is="item.icon" v-else />
                 </el-icon>
 
