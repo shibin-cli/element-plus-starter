@@ -10,7 +10,7 @@ const router = Router()
 //     res.send(config.response())
 //   })
 // })
-router.get('/hello', (_, res) => res.send('Hello World!'))
+router.get('/api/hello', (_, res) => res.send('Hello World!'))
 
 api.use('/', router)
 
