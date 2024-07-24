@@ -35,7 +35,7 @@ export default [
   {
     url: '/api/get-list',
     method: 'get',
-    response: ({}) => {
+    response: () => {
       return {
         code: 0,
         data: {
