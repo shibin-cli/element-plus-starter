@@ -13,6 +13,6 @@ router.get('/', (req, res) => {
 app.use(express.json())
 
 // Use router
-app.use('/.netlify/functions/api', router)
+app.use('/api', router)
 
-module.exports.handler = serverless(app)
+export const handler = serverless(app)
