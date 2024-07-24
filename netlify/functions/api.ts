@@ -1,17 +1,18 @@
 import express, { Router } from 'express'
 import serverless from 'serverless-http'
 // import mockMethods from '../../mock'
-const api = express()
+const app = express()
+const router = express.Router()
 
-const router = Router()
-// mockMethods.forEach((config) => {
-//   router.get(config.method)
-//   router[config.method](config.url, (res) => {
-//     res.send(config.response())
-//   })
-// })
-router.get('/hello', (_, res) => res.send('Hello World!'))
+// Example route
+router.get('/', (req, res) => {
+  res.json({ message: 'Hello from Express on Netlify!' })
+})
 
-api.use('/', router)
+// Middleware to parse JSON
+app.use(express.json())
 
-export const handler = serverless(api)
+// Use router
+app.use('/.netlify/functions/api', router)
+
+module.exports.handler = serverless(app)
