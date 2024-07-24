@@ -45,6 +45,7 @@
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
     "autoprefixer": "^10.4.19",
+    "esbuild": "^0.23.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "express": "^4.19.2",
