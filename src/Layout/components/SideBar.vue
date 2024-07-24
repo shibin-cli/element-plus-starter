@@ -203,9 +203,8 @@ const openHref = (url: string) => {
       <logo-icon v-if="store.collapse" class="w-full h-[28px] cursor-pointer" />
       <logo-full-icon v-else class="w-full px-6 cursor-pointer h-[28px]" />
     </div>
-    <div class="flex-1 flex flex-col">
+    <el-scrollbar class="h-full flex-1">
       <el-menu
-        class="flex-1"
         router
         :collapse="store.collapse"
         :collapse-transition="false"
@@ -251,7 +250,7 @@ const openHref = (url: string) => {
           </template>
         </template>
       </el-menu>
-    </div>
+    </el-scrollbar>
   </div>
 </template>
 <style scoped lang="scss">
