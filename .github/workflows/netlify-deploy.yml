@@ -8,8 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      VITE_APP_BASE_URL: ${{ secrets.VITE_APP_BASE_URL }}
+    # env:
+    # VITE_APP_BASE_URL: ${{ secrets.VITE_APP_BASE_URL }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
