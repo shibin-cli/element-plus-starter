@@ -5,6 +5,9 @@ import { useRouter } from 'vue-router'
 
 const store = useThemeStore()
 const router = useRouter()
+function  open(url: string) {
+  window.open(url)
+}
 </script>
 <template>
   <div class="flex items-center h-full justify-between">
@@ -31,7 +34,7 @@ const router = useRouter()
         </el-button>
       </el-tooltip>
       <el-tooltip :content="$t('layout.header.code')">
-        <el-button text>
+        <el-button text @click="open('https://github.com/shibin-cli/element-plus-starter')">
           <template #icon>
             <svg-icon icon="github" />
           </template>
