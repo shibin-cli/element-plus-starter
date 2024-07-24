@@ -21,6 +21,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+      - name: Install esbuild
+        run: npm install -g esbuild
 
       - name: Build
         run: npm run build
