@@ -1,8 +1,11 @@
 import express, { Router } from 'express'
 import serverless from 'serverless-http'
 import Mock from 'mockjs'
+import { MockMethod } from 'vite-plugin-mock'
+
 const api = express()
-const list = [
+
+const list: MockMethod[] = [
   {
     url: '/api/get-purchase-list',
     method: 'get',
@@ -371,7 +374,6 @@ const list = [
 ]
 
 const router = Router()
-router.get('/hello', (req, res) => res.send('Hello World!'))
 list.forEach((config) => {
   const method = config.method || 'get'
   router[method](config.url, (req, res) => {
